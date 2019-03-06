@@ -1,0 +1,16 @@
+<% @users.each_with_index do |user, i| %>
+	
+		<div class="card" style="width: 18rem;">
+			<% if i.even? %>
+				<%= image_tag('female.png', class: 'card-img-top', alt: "Card image cap") %>
+			<% else %>
+				<%= image_tag('male.png', class: 'card-img-top', alt: "Card image cap") %>
+			<% end %>
+			<div class="card-body">
+				<h5 class="card-title"><%= user.email %></h5>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<%= link_to 'View More', user_path(user), class: 'btn btn-primary' %>
+			</div>
+		</div>
+
+<% end %>
